@@ -118,7 +118,7 @@ From #PercentPopulationVaccinated
 
 
 
--- membuat view untuk store data 
+-- membuat view
 
 Create View PercentPopulationVaccinated as
 Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations
