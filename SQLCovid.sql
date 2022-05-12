@@ -55,7 +55,7 @@ where continent is not null
 
 -- melakukan join tabel CovidDeaths dengan CovidVaccinations
 -- menggunakan query 'partition by' agar perhitungan vaksinasi menggunakan SUM dapat dihitung berdasarkan setiap negara
--- menunjukan total jumlah orang yang sudah divaksinasi pada setiap negara
+-- melihat total jumlah orang yang sudah divaksinasi pada setiap negara
 
 Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations
 , SUM(CONVERT(int,vac.new_vaccinations)) OVER (Partition by dea.Location Order by dea.location, dea.Date) as RollingPeopleVaccinated
