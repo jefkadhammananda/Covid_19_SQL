@@ -25,7 +25,7 @@ order by 2
 
 -- melihat negara yang paling banyak terinfeksi virus terhadap populasi 
 
-Select Location, Population, MAX(total_cases) as HighestInfectionCount,  Max((total_cases/population))*100 as PercentPopulationInfected
+Select Location, Population, date, MAX(total_cases) as HighestInfectionCount,  Max((total_cases/population))*100 as PercentPopulationInfected
 From PortofolioProject..CovidDeaths
 Group by Location, Population
 order by PercentPopulationInfected desc
