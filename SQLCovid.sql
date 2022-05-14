@@ -27,7 +27,7 @@ order by 2
 
 Select Location, Population, date, MAX(total_cases) as HighestInfectionCount,  Max((total_cases/population))*100 as PercentPopulationInfected
 From PortofolioProject..CovidDeaths
-Group by Location, Population
+Group by Location, Population, date
 order by PercentPopulationInfected desc
 
 -- melihat negara dengan total kematian akibat virus terbanyak
