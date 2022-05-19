@@ -83,30 +83,6 @@ where dea.continent is not null
 Select *, (RollingPeopleVaccinated/Population)*100 as PercentPeopleVaccinated
 From PopvsVac
 
--- melakukan hal yang sama seperti query sebelumnya dengan metode temp table 
--- menggunakan create table dan insert into
-
-DROP Table if exists #PercentPopulationVaccinated
-Create Table #PercentPopulationVaccinated
-(
-Continent nvarchar(255),
-Location nvarchar(255),
-Date datetime,
-Population numeric,
-New_vaccinations numeric,
-RollingPeopleVaccinated numeric
-)
-
-Insert into #PercentPopulationVaccinated
-Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations
-, SUM(CONVERT(int,vac.new_vaccinations)) OVER (Partition by dea.Location Order by dea.location, dea.Date) as RollingPeopleVaccinated
-From PortofolioProject..CovidDeaths dea
-Join PortofolioProject..CovidVaccinations vac
-	On dea.location = vac.location
-	and dea.date = vac.date
-Select *, (RollingPeopleVaccinated/Population)*100 as PercentPeopleVaccinated
-From #PercentPopulationVaccinated
-
 -- membuat view yang akan digunakan untuk visualisasi 
 
 Create View PercentPopulationVaccinated as
