@@ -67,7 +67,7 @@ where dea.continent is not null
 order by 2,3
 
 -- melihat persentase orang yang sudah melakukan vaksinasi terhadap populasi di setiap negara
--- menggunakan CTE untuk melakukan kalkulasi partisi pada query sebelumnya
+-- menggunakan CTE, fungsi pertama untuk melihat jumlah orang yang sudah divaksinasi pada setiap negara dan selanjutnya dilakukan perhitungan persentase terhadap populasi dari negara tersebut
 
 With PopvsVac (Continent, Location, Date, Population, New_Vaccinations, RollingPeopleVaccinated)
 as
