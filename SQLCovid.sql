@@ -84,7 +84,7 @@ Select *, (RollingPeopleVaccinated/Population)*100 as PercentPeopleVaccinated
 From PopvsVac
 
 -- melakukan hal yang sama seperti query sebelumnya dengan metode temp table 
---menggunakan create table dan insert into
+-- menggunakan create table dan insert into
 
 DROP Table if exists #PercentPopulationVaccinated
 Create Table #PercentPopulationVaccinated
