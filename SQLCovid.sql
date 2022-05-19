@@ -83,7 +83,7 @@ where dea.continent is not null
 Select *, (RollingPeopleVaccinated/Population)*100 as PercentPeopleVaccinated
 From PopvsVac
 
--- membuat view yang akan digunakan untuk visualisasi 
+-- membuat view pada SQL
 
 Create View PercentPopulationVaccinated as
 Select dea.continent, dea.location, dea.date, dea.population, vac.new_vaccinations
