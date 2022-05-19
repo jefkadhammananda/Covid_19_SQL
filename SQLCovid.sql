@@ -23,7 +23,7 @@ From PortofolioProject..CovidDeaths
 Where location like 'indonesia'
 order by 2
 
--- melihat negara yang paling banyak terinfeksi virus terhadap populasi 
+-- melihat persentase negara yang warga negaranya paling banyak terinfeksi virus terhadap populasinya
 
 Select Location, Population, date, MAX(total_cases) as HighestInfectionCount,  Max((total_cases/population))*100 as PercentPopulationInfected
 From PortofolioProject..CovidDeaths
