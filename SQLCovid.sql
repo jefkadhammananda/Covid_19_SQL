@@ -30,7 +30,7 @@ From PortofolioProject..CovidDeaths
 Group by Location, Population, date
 order by PercentPopulationInfected desc
 
--- melihat negara dengan total kematian akibat virus terbanyak
+-- melihat negara dengan total kematian warganya akibat covid yang terbanyak
 -- menggunakan cast untuk mengganti tipe data menjadi integer
 
 Select Location, MAX(cast(Total_deaths as int)) as TotalDeathCount
