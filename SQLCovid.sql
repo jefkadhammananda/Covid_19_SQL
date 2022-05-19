@@ -9,14 +9,14 @@ From PortofolioProject..CovidDeaths
 Where continent is not null 
 order by 1,2
 
--- melihat persentase kematian dari total kasus untuk negara indonesia
+-- melihat persentase kematian dari orang yang terkena kasus covid untuk negara indonesia
 
 Select Location, date, total_deaths,total_cases, (total_deaths/total_cases)*100 as DeathPercentage
 From PortofolioProject..CovidDeaths
 Where location like 'indonesia' and total_deaths is not null
 order by 2
 
--- melihat persentase total kasus dari keseluruhan populasi
+-- melihat persentase orang yang terinfeksi terhadap keseluruhan populasi untuk negara indonesia
 
 Select Location, date, total_cases, Population,  (total_cases/population)*100 as PercentPopulationInfected
 From PortofolioProject..CovidDeaths
